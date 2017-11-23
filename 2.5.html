@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <div v-myhtml="msg"></div>
+</div>
+<script>
+//    Vue.directive('myhtml',{
+//        bind:function (el,binding) {
+//            el.innerHTML=binding.value;
+//        }
+//    })
+
+
+    var vm=new Vue({
+        el:'#app',
+        data:{
+            msg:'<h1>大家好</h1>'
+        },
+        directives:{
+            myhtml:{
+                bind:function (el,binding) {
+            el.innerHTML=binding.value;
+        }
+            }
+        }
+    })
+</script>
+</body>
+</html>
